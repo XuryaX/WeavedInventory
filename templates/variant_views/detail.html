@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load addcss %}
+
+{% block content %}
+    <div id="userform">
+            <div class="form-group">
+
+                {% csrf_token %}
+                <label class="control-label" for="form-control input-sm">ID: </label>
+                <div class="form-control input-sm">{{object.variant_id}}</div>
+
+                <label class="control-label" for="form-control input-sm">Item: </label>
+                <div class="form-control input-sm">{{object.item_code}}</div>
+
+                <label class="control-label" for="form-control input-sm">Cost: </label>
+                <div class="form-control input-sm">{{object.cost}}</div>
+
+                <label class="control-label" for="form-control input-sm">Quantity: </label>
+                <div class="form-control input-sm">{{object.quantity}}</div>
+
+                <label class="control-label" for="form-control input-sm">Color: </label>
+                <div class="form-control input-sm">{{object.color}}</div>
+
+                <br />
+                <a href="/edit-variant/{{ object.variant_id }}" id="login" class="btn btn-default">Edit</a>
+
+                <br />
+
+            </div>
+    </div>
+{% endblock %}

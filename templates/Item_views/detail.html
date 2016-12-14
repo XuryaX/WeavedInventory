@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load addcss %}
+
+{% block content %}
+    <div id="userform">
+            <div class="form-group">
+
+                {% csrf_token %}
+                <label class="control-label" for="form-control input-sm">Product Code: </label>
+                <div class="form-control input-sm">{{object.product_code}}</div>
+
+                <label class="control-label" for="form-control input-sm">Product Name: </label>
+                <div class="form-control input-sm">{{object.product_name}}</div>
+
+                <br />
+                <a href="/edit-item/{{ object.item_id }}" id="login" class="btn btn-default">Edit</a>
+
+                <br />
+
+            </div>
+    </div>
+{% endblock %}
